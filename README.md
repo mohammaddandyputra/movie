@@ -1,24 +1,83 @@
-# Lumen PHP Framework
+Theme      : Movie App
+Framework  : Laravel Lumen
+Auth       : JWT
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+REST API mengelola jadwal film dan pemesanan film
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+1. Sign In
+Method      : POST 
+URL         : https://dandy-movie.000webhostapp.com/public/login
+Requirement : email, password
 
-## Official Documentation
+2. Register Akun
+Method      : POST 
+URL         : http://movie.000webhost.com/register
+Requirement : name, email, password
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+3. Logout
+Method      : POST 
+URL         : http://movie.000webhost.com/logout
+Requirement : Bearer Token
 
-## Contributing
+4. Profile ( Melihat detail user yang login )
+Method      : GET 
+URL         : http://movie.000webhost.com/profile
+Requirement : Bearer Token
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
+---------------------------------------------------------------------------------------------------------
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+NOTE : Untuk mengakses kesulurah API dibawah harus memiliki token terlebih dahulu dengan cara login
+ 
 
-## License
+5. All Data ( Movie )
+Method      : GET 
+URL         : http://movie.000webhost.com/movie
+Requirement : 
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6. Detail Data ( Movie )
+Method      : GET 
+URL         : http://movie.000webhost.com/movie/{endpoint}
+Requirement : endpoint
+
+7. Create ( Movie )
+Method      : POST 
+URL         : http://movie.000webhost.com/movie/
+Requirement : name, price, date, desc, category
+
+8. Delete ( Movie )
+Method      : DELETE 
+URL         : http://movie.000webhost.com/movie/{endpoint}
+Requirement : endpoint
+
+9. Update ( Movie )
+Method      : UPDATE 
+URL         : http://movie.000webhost.com/movie/{endpoint}
+Requirement : name, price, date, desc, category
+
+10. Filter by Price ( Movie )
+Method      : GET 
+URL         : http://movie.000webhost.com/movie/filter/price
+Requirement : paginate, priceMax, priceMin
+
+11. Filter by Category ( Movie )
+Method      : GET 
+URL         : http://movie.000webhost.com/movie/filter/category
+Requirement : paginate, category
+
+
+
+12. All Data ( Cart )
+Method      : GET 
+URL         : http://movie.000webhost.com/cart
+Requirement : 
+
+13. Create ( Cart )
+Method      : POST 
+URL         : http://movie.000webhost.com/cart
+Requirement : movie_id, booking_date
+
+14. Delete ( Cart )
+Method      : DELETE
+URL         : http://movie.000webhost.com/cart/{endpoint}
+Requirement : endpoint
